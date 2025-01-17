@@ -1,0 +1,132 @@
+{
+  "name": "@exodus/crypto",
+  "version": "1.0.0-rc.18",
+  "description": "Reusable cryptography primitives, for browser/Node.js/Electron/React Native",
+  "exports": {
+    "./randomBytes": {
+      "browser": "./randomBytes.browser.js",
+      "react-native": "./randomBytes.native.js",
+      "node": "./randomBytes.node.js",
+      "default": "./randomBytes.js"
+    },
+    "./randomUUID": {
+      "browser": "./randomUUID.browser.js",
+      "react-native": "./randomUUID.native.js",
+      "node": "./randomUUID.node.js",
+      "default": "./randomUUID.js"
+    },
+    "./hash": {
+      "browser": "./hash.browser.js",
+      "react-native": "./hash.native.js",
+      "node": "./hash.node.js",
+      "default": "./hash.js"
+    },
+    "./hmac": {
+      "browser": "./hmac.browser.js",
+      "react-native": "./hmac.native.js",
+      "node": "./hmac.node.js",
+      "default": "./hmac.js"
+    },
+    "./sodium": "./sodium.mjs",
+    "./keccak": "./keccak.mjs",
+    "./blake2b": "./blake2b.mjs",
+    "./secp256k1": "./secp256k1.mjs",
+    "./curve25519": "./curve25519.mjs"
+  },
+  "browser": {
+    "./randomBytes.js": "./randomBytes.browser.js",
+    "./randomUUID.js": "./randomUUID.browser.js",
+    "./hash.js": "./hash.browser.js",
+    "./hmac.js": "./hmac.browser.js"
+  },
+  "react-native": {
+    "./randomBytes.js": "./randomBytes.native.js",
+    "./randomUUID.js": "./randomUUID.native.js",
+    "./hash.js": "./hash.native.js",
+    "./hmac.js": "./hmac.native.js"
+  },
+  "files": [
+    "/blake2b.mjs",
+    "/curve25519.mjs",
+    "/hash.js",
+    "/hash.browser.js",
+    "/hash.native.js",
+    "/hash.node.js",
+    "/hmac.js",
+    "/hmac.browser.js",
+    "/hmac.native.js",
+    "/hmac.node.js",
+    "/keccak.mjs",
+    "/sodium.mjs",
+    "/randomBytes.js",
+    "/randomBytes.browser.js",
+    "/randomBytes.native.js",
+    "/randomBytes.node.js",
+    "/randomUUID.js",
+    "/randomUUID.browser.js",
+    "/randomUUID.native.js",
+    "/randomUUID.node.js",
+    "/secp256k1.mjs",
+    "/utils/assertHash.js",
+    "/utils/assertHmac.js",
+    "/utils/assertSize.js",
+    "/utils/browserHashTools.js",
+    "/utils/curve25519.mjs",
+    "/utils/hash.mjs",
+    "/utils/hash.noble.js",
+    "/utils/sodium.mjs",
+    "/utils/output.js"
+  ],
+  "scripts": {
+    "lint": "prettier --list-different '**/*.js' '**/*.mjs' && eslint .",
+    "format": "prettier --write '**/*.js' '**/*.mjs'",
+    "coverage": "exodus-test --coverage test/*.js",
+    "test:d8": "exodus-test --engine=d8:bundle --bundle-entropy-size 10000000 test/*.all*js test/*.native*js",
+    "test:jsc": "exodus-test --engine=jsc:bundle --bundle-entropy-size 10000000 test/*.all*js test/*.native*js",
+    "test:hermes": "exodus-test --engine=hermes:bundle --bundle-entropy-size 10000000 test/*.all*js test/*.native*js",
+    "test": "exodus-test test/*js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExodusMovement/crypto.git"
+  },
+  "author": "Exodus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ExodusMovement/crypto/issues"
+  },
+  "homepage": "https://github.com/ExodusMovement/crypto#readme",
+  "dependencies": {
+    "@noble/ed25519": "^1.7.3",
+    "@noble/hashes": "^1.3.3",
+    "@noble/secp256k1": "^1.7.1"
+  },
+  "devDependencies": {
+    "@bitcoin-js/tiny-secp256k1-asmjs": "^2.2.3",
+    "@exodus/bitcoinerlab-secp256k1": "^1.0.6-rc.1",
+    "@exodus/blakejs": "^1.1.1-exodus.0",
+    "@exodus/patch-broken-hermes-typed-arrays": "^1.0.0-alpha.1",
+    "@exodus/secp256k1": "5.0.0-exodus.4",
+    "@exodus/sodium-crypto": "3.3.1",
+    "@exodus/test": "^1.0.0-rc.50",
+    "@noble/curves": "^1.6.0",
+    "@stablelib/ed25519": "^1.0.3",
+    "@stablelib/x25519": "^1.0.3",
+    "create-hash": "^1.2.0",
+    "ecpair": "^2.1.0",
+    "elliptic": "^6.6.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "hermes-engine-cli": "^0.12.0",
+    "keccak": "^3.0.4",
+    "prettier": "~1.14.3",
+    "secp256k1": "^5.0.1",
+    "tiny-secp256k1": "^2.2.3",
+    "tweetnacl": "^1.0.3"
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+}

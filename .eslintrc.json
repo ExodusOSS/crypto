@@ -1,0 +1,36 @@
+{
+  "parserOptions": {
+    "sourceType": "script"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "standard", "prettier"],
+  "rules": {
+    "strict": 2,
+    "no-else-return": 2,
+    "no-fallthrough": 2,
+    "no-param-reassign": 2,
+    "no-proto": 2,
+    "no-prototype-builtins": 2,
+    "no-shadow": 2,
+    "no-unused-vars": [2, { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }],
+    "prefer-const": 2,
+    "prefer-object-spread": 2,
+    "prefer-template": 2,
+    "valid-typeof": [2, { "requireStringLiterals": true }],
+    "no-var": 2
+  },
+  "overrides": [
+    {
+      "files": ["**/*.mjs"],
+      "parserOptions": {
+        "sourceType": "module"
+      },
+      "rules": {
+        "camelcase": 0
+      }
+    }
+  ]
+}
